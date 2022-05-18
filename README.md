@@ -1,11 +1,11 @@
-## Objetivo do exercicio
+### Objetivo do exercicio
 
-- Criar um player de musica utilizando HTML, JS E CSS(materialize)
+- Criar um player de musica utilizando HTML, JS E CSS (materialize)
 
 ### Primeira etapa de criação
 
 - [x] Criar estrutura do layout 
-- [] Implementar player de audio 
+- [x] Implementar player de audio 
 - [] Implementar autoplay 
 - [] Alimentar o player com dados de áudio
 
