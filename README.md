@@ -6,12 +6,11 @@
 
 - [x] Criar estrutura do layout 
 - [x] Implementar player de audio 
-- [] Implementar autoplay 
-- [] Alimentar o player com dados de áudio
+- [] Alimentar o player com dados de áudio utilizando Javascript
 
 ### Segunda etapa de criação
 
-- [] Refatorar: Criar um objeto para guardar o estado, funcionalidades e configurações do player
+- [] Criar um objeto para guardar o estado, funcionalidades e configurações do player
 - [] Quando o audio finalizar, iniciar o próximo da lista
 - [] Quando chegar o último audio, voltar a reproduzir o primeiro
 
