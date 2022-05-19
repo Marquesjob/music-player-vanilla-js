@@ -6,7 +6,7 @@
 
 - [x] Criar estrutura do layout 
 - [x] Implementar player de audio 
-- [] Alimentar o player com dados de áudio utilizando Javascript
+- [x] Alimentar o player com dados de áudio utilizando Javascript
 
 ### Segunda etapa de criação
 
