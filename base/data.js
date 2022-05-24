@@ -1,4 +1,4 @@
-window.audios = [
+window.audioData = [
     {
         title:"Elevate!",
         artist:"Frank Bentley",
