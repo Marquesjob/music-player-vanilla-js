@@ -2,6 +2,6 @@ const path = (file) => {
     return `files/${file}`
 }
 
-window.addEventListener('load', player.traking());
+window.addEventListener('load', player.start());
 
 
