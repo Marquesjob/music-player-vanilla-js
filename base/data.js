@@ -1,4 +1,4 @@
-window.audioData = [
+export default [
     {
         title:"Elevate!",
         artist:"Frank Bentley",

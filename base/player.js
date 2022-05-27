@@ -1,4 +1,8 @@
-window.player = {
+import audioData from "./data.js";
+import { path } from "./utills.js";
+
+
+export default {
     cover: document.querySelector(".card-image"),
     title: document.querySelector(".card-content h5"),
     artist: document.querySelector(".artist"),

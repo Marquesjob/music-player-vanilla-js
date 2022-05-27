@@ -1,6 +1,6 @@
-const path = (file) => {
-    return `files/${file}`
-}
+import player from "./player.js";
+
+
 
 window.addEventListener('load', player.start());
 
