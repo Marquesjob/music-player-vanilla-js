@@ -1,6 +1,6 @@
 import audioData from "./data.js";
-import { path } from "./utills.js";
-
+import { path, convertFormat } from "./utills.js";
+import elements from "./playerElements.js";
 
 export default {
     cover: document.querySelector(".card-image"),
@@ -10,17 +10,47 @@ export default {
     audioData: audioData,
     currentAudio: {},
     currentPlaying: 0,
+    isPlaying: false,
     start() {
+        elements.get.call(this);
         this.update(); 
-        this.audio.onended = () => this.next(); 
+       
+    },
+    play (){
+        this.isPlaying = true;
+        this.audio.play(); 
+        this.playPause.innerText = "pause";
+    },
+    pause(){
+        this.isPlaying = false;
+        this.audio.pause();
+        this.playPause.innerText = "play_arrow";
+    },
+    togglePlayPause(){
+        this.isPlaying ? this.pause() : this.play();
+    },
+    toggleMute(){
+        this.audio.muted = !this.audio.muted;
+        this.mute.innerText = this.audio.muted ? "volume_mute" : "volume_up";
     },
     next () {
         this.currentPlaying++;
+
         if (this.currentPlaying == this.audioData.length){ // Verifica se o index indicado corresponde ao número de itens dentro do objeto.
-            this.restart();                                // se for, retorna o valor para 0, assim voltando o player para a primeira faixa.  
+            this.restart();                                // se for, retorna o valor para 0, voltando o player para a primeira faixa.  
         }                                                         
         this.update();
         this.audio.play();      
+    },
+    setVolume (value){
+        this.audio.volume = value / 100;
+    },
+    setSeek (value){
+        this.audio.currentTime = value;
+    },
+    timeUpdate (){
+        this.currentDuration.innerText = convertFormat(this.audio.currentTime);
+        this.seekbar.value = this.audio.currentTime;
     },
     update() { 
         this.currentAudio = this.audioData[this.currentPlaying];
@@ -29,11 +59,16 @@ export default {
         this.cover.style.height = `40vh`;
         this.title.innerText = this.currentAudio.title;
         this.artist.innerText = this.currentAudio.artist;
-        this.audio.src = path(this.currentAudio.file);
+        elements.createAudioElement.call(this, path(this.currentAudio.file));
+        this.audio.onloadeddata = () => {
+            elements.actions.call(this);
+        }
     },
     restart(){
         this.currentPlaying = 0;
         this.update();
     }
 }
+
+
 
