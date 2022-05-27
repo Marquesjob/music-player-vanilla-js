@@ -7,20 +7,29 @@ window.player = {
     currentAudio: {},
     currentPlaying: 0,
     start() {
-        this.updateTrack();
+        this.update(); 
         this.audio.onended = () => this.next(); 
     },
     next () {
         this.currentPlaying++;
-        this.updateTrack();
+        if (this.currentPlaying == this.audioData.length){ // Verifica se o index indicado corresponde ao número de itens dentro do objeto.
+            this.restart();                                // se for, retorna o valor para 0, assim voltando o player para a primeira faixa.  
+        }                                                         
+        this.update();
         this.audio.play();      
     },
-    updateTrack() {
-        this.currentAudio = this.audioData[this.currentPlaying]
-        this.cover.style.background = `url('${path(this.currentAudio.cover)}') no-repeat center center / cover`
-        this.cover.style.height = `40vh`
+    update() { 
+        this.currentAudio = this.audioData[this.currentPlaying];
+
+        this.cover.style.background = `url('${path(this.currentAudio.cover)}') no-repeat center center / cover`;
+        this.cover.style.height = `40vh`;
         this.title.innerText = this.currentAudio.title;
         this.artist.innerText = this.currentAudio.artist;
         this.audio.src = path(this.currentAudio.file);
+    },
+    restart(){
+        this.currentPlaying = 0;
+        this.update();
     }
 }
+
