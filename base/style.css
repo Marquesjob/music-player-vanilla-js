@@ -3,11 +3,12 @@
 
 :root {
     --primary-color:#47c299;
+    --body-background:#e3e7e4;
 }
 
 body {
     height: 100vh;
-    background-color: #efefef;
+    background-color: var(--body-background);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,8 +54,9 @@ audio {
     background-color:var(--primary-color);
 }
 
-#vol {
+#mute {
     color:var(--primary-color);
+    transform: translateY(2px); /*gambiarra pra alinhar o icone com o controle de volume*/
 }
 
 input[type="range"]::-webkit-slider-thumb {
