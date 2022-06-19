@@ -1,4 +1,4 @@
-### Objetivo do exercicio
+## Objetivo do exercicio
 
 - Criar um player de musica utilizando HTML, JS E CSS (materialize)
 
