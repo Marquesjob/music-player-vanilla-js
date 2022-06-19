@@ -19,7 +19,7 @@
 - [x] Iniciar a customização visual do player
 - [x] Adicionar funcionalidade para os botões (Play/Pause, Volume, Mute e Seekbar )
 
-## Quarta etapa de criaçao
+### Quarta etapa de criaçao
 
 - [] Adicionar botões de next e previous
 - [] Adicionar background mais chamativo
