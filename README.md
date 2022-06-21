@@ -24,4 +24,5 @@
 - [] Adicionar botões de next e previous
 - [] Adicionar background mais chamativo
 - [] Dar funcionalidade de avançar e voltar aos botões
+- [] Adicionar seletor de tema escuro ou claro
 
